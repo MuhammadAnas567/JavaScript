@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click me</button>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+    <script>
+        // btn1.ondblclick = (evt) => {
+        //     console.log("button was clicked");
+        // };
+        // btn1.onmouseover = (evt) => {
+        //     console.log("button was clicked");
+        // };
+        // btn1.addEventListener("click", (e) => {
+        //     console.log("clickk");
+        //     console.log(e);
+        // });
+        //Practice Question 1
+            let modebtn = document.querySelector("button")
+        let currentmode = "Light"
+
+        modebtn.addEventListener("click", () =>{
+            if(currentmode == "Light"){
+                currentmode = "dark"
+                document.body.style.background = "black"
+                 document.body.style.color = "white"
+            }
+            else{
+                currentmode = "Light"
+                 document.body.style.background = "white"
+                  document.body.body.style.color = "black"
+            }
+            console.log(currentmode);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var Num = parseInt(prompt("Enter The Age"))
+
+    if(Num >= 18 && Num <=65)
+{
+    var AccountType = (prompt("Welcome To HDC Bank \n Select Your Bank Account \n 1.Investment Account \n 2.Current Account"))
+
+    if(AccountType==1)
+{
+    document.write("You Have Been Selected a Investment Bank Account")
+}
+
+else if(AccountType==2)
+{
+    document.write("You Have Been Selected a Current Bank Account")
+}
+else{
+    document.write("Invalid Account")
+}
+}
+else if(Num <18)
+{
+    var AccountType = (prompt("Welcome To HDC Bank \n Select Your Bank Account \n 1.Saving Account \n 2.Deposit Account"))
+
+    if(AccountType==1)
+{
+    document.write("You Have Been Selected a Saving Bank Account")
+}
+
+else if(AccountType==2)
+{
+    document.write("You Have Been Selected a Deposit Bank Account")
+}
+else{
+    document.write("Invalid Account")
+}
+}
+else{
+    document.write("Invalid Account")
+}
+       </script>
+</body>
+</html>

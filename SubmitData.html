@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SubmitData</h1>
+    <br>
+    <form>
+    <input type="text" placeholder="Enter a name" id="input1">
+    <input type="email" placeholder="Enter a email" id="input2" required>
+    <textarea rows="8" cols="30" placeholder="Enter a message" id="msg"></textarea>
+    <button onclick="SubmitData()">Submit</button>
+    </form>
+    
+    <script>
+        function SubmitData(){
+        let username = document.getElementById("input1").value
+        let email = document.getElementById("input2").value
+        let message = document.getElementById("msg").value
+
+        if(username == "" || email == "" || message == ""){
+            alert("Please Fill Out of all values")
+        }
+        else{
+            let userdata= {
+                name:username,
+                mail : email,
+                msg: message
+            }
+            console.log(userdata)
+
+            document.getElementById("input1").value = "" 
+            document.getElementById("input2").value = ""
+            document.getElementById("msg").value = ""
+
+            alert("You have Submitted")
+        }
+    }
+    </script>
+</body>
+</html>

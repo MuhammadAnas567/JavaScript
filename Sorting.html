@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 30px;
+            width: 100%;
+            height: 78vh;
+            display: none;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+     <h1>Select a Fruit</h1>    
+    <button onclick="showImage('cherry')">Cherry</button>
+    <button onclick="showImage('strawberry')">Strawberry</button>
+    <br>
+    <img id="fruitImage" src="" alt="Fruit Image">
+
+     <script>
+        function showImage(fruit) {
+            let img = document.getElementById('fruitImage');
+            if (fruit == "cherry") {
+                img.src = "https://images.unsplash.com/photo-1623001650875-11856f50e28a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoZXJyeSUyMHRyZWV8ZW58MHx8MHx8fDA%3D";
+                img.style.display = "block";
+            } else if (fruit == "strawberry") {
+                img.src = "https://images.unsplash.com/photo-1518635017498-87f514b751ba?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN0cmF3YmVycnl8ZW58MHx8MHx8fDA%3D";
+                img.style.display = "block";
+            }
+        }
+    </script>
+    
+
+</body>
+</html>

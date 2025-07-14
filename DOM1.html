@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="Head1">This Is Heading 1</h1>
+    <p>This is paragraph 1</p>
+    <p>This is paragraph 1</p>
+    
+    <p id="Para"></p>
+
+    <script>
+        var Elementdata = document.getElementsByTagName("p");
+        document.getElementById("Para").innerHTML = "Paragraph Containing - " + Elementdata[0].innerHTML  
+
+        var Elementdataa = document.getElementById("Head1");
+        document.getElementById("Para").innerHTML = "Paragraph Containing - " + Elementdataa.innerHTML 
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    background-color: aqua;
+    height: 50px;
+    align-items: center;
+}
+li{
+    margin: 0 30px;
+    list-style: none;
+}
+button{
+    background-color: rgb(8, 7, 7);
+    height: 30px;
+    color: white;
+    width: 70px;
+    border-radius: 30px;
+    margin: 0 23px;
+    transition: 3s;
+    background-color: aqua;
+}

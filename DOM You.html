@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+            margin: 20px;
+            background-color:aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h"></h1>
+    <h2>Hello javascript</h2>
+    <div class="box">Hello</div>
+    <div class="box">Hello</div>
+    <div class="box">Hello</div>
+    <div class="box">Hello</div>
+    <p id="p">This is JS</p>
+    <script>
+        let h1 = document.querySelector("#h");
+        h1.innerText = "Hello World";
+        // h1.textContent = "Hello with textContent";
+        // h1.innerHTML = "<em>Hello with innerHTML</em>";
+
+        //Practice Question 1
+        let h2 = document.querySelector("h2").innerText = "Apna college"
+
+        //Practice Question 2
+        let divs = document.querySelectorAll(".box");
+        let idx = 0;
+        for(let div of divs){
+            div.innerText = `new unique value ${idx}`;
+            idx++;
+        };
+        let para = document.querySelector("p")
+        console.log(para.setAttribute("id", "newp"));
+        para.style.backgroundColor  = "purple";
+        para.style.fontSize  = "30px";
+        para.style.visibility  = "hiddenz";
+
+        let newbtn = document.createElement("button")
+        newbtn.innerText = "Click me"
+        console.log(newbtn);
+        para.append(newbtn);
+        newbtn.style.backgroundColor = "red";
+        newbtn.style.color = "white";
+        
+        
+    </script>
+</body>
+</html>

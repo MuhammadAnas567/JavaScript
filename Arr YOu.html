@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Practice Question 1
+        let marks = [56, 67, 78, 90, 45];
+        let sum = 0;
+
+        for(let val of marks){
+                sum += val;
+        };
+        let avg = sum/marks.length;
+        console.log(avg);
+
+        // Practice Question 2
+        let prices = [200, 250, 300, 400, 500];
+        for(let val of prices){
+            let offer = val/10;     
+            let value = val - offer;
+            console.log(value);    
+        };
+
+          let arr = [2, 4, 8, 9, 8, 67];
+        let array = [2, 4, 8, 9, 8, 67];
+        console.log(arr.concat(array));
+        console.log(arr.slice(1,3));
+        console.log(arr.splice(2,2,10,11));
+        console.log(arr);
+
+        // Practice Question 3
+        let companies = ["Uber", "Microsoft", "Google", "Ibx"];
+        console.log(companies.shift());
+        console.log(companies);
+        console.log(companies.push("Amazon"));
+        console.log(companies);
+            console.log(companies.splice(2,1,"Ola"));
+        console.log(companies);
+         
+        // for(i=0; i<marks.length; i++ )
+        // console.log(marks[i]);
+    </script>
+</body>
+</html>
