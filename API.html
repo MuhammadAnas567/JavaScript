@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "para"></p>
+    <script>
+        const Url = "https://www.themealdb.com/api/json/v1/1/search.php?s";
+        async function api() {
+            const response = await fetch(Url);
+            const data = await response.json();
+             console.log(data);
+
+            let paraa = document.querySelector("#para");
+            paraa.innerText = data.meals[0].strCategory; 
+           
+            
+        }
+        api();
+	
+    </script>
+</body>
+</html>
