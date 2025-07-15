@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+      <h2>API Request Methods Example</h2>
+    <button onclick="getData()">GET</button>
+    <button onclick="postData()">POST</button>
+    <button onclick="putData()">PUT</button>
+    <button onclick="patchData()">PATCH</button>
+    <button onclick="deleteData()">DELETE</button>
+
+    <script>
+           const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+        function getData() {
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => console.log('GET:', data.slice(0, 5))) // pehle 5 dikhaye
+                .catch(err => console.error(err));
+        }
+
+        function postData() {
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: 'New Post',
+                    body: 'This is created via POST',
+                    userId: 1
+                })
+            })
+            .then(res => res.json())
+            .then(data => console.log('POST:', data))
+            .catch(err => console.error(err));
+        }
+
+        function putData() {
+            fetch(`${apiUrl}/1`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: 1,
+                    title: 'Updated Title via PUT',
+                    body: 'Whole post replaced',
+                    userId: 1
+                })
+            })
+            .then(res => res.json())
+            .then(data => console.log('PUT:', data))
+            .catch(err => console.error(err));
+        }
+
+        function patchData() {
+            fetch(`${apiUrl}/1`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: 'Updated only Title via PATCH'
+                })
+            })
+            .then(res => res.json())
+            .then(data => console.log('PATCH:', data))
+            .catch(err => console.error(err));
+        }
+
+        function deleteData() {
+            fetch(`${apiUrl}/1`, {
+                method: 'DELETE'
+            })
+            .then(res => {
+                if (res.ok) {
+                    console.log('DELETE: Post deleted successfully');
+                }
+            })
+            .catch(err => console.error(err));
+        }
+    </script>
+</body>
+</html>
