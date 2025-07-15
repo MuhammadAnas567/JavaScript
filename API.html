@@ -15,9 +15,9 @@
              console.log(data);
 
             let paraa = document.querySelector("#para");
-            paraa.innerText = data.meals[0].strCategory; 
-           
-            
+            data.meals.forEach(meal => {
+            paraa.innerHTML +=meal.strArea + "<br>" 
+            });
         }
         api();
 	
