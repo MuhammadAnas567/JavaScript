@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>API Request Methods Example</h2>
+    <button onclick="getData()">GET</button>
+    <button onclick="postData()">POST</button>
+    <button onclick="putData()">PUT</button>
+    <button onclick="patchData()">PATCH</button>
+    <button onclick="deleteData()">DELETE</button>
+
+    <script>
+        const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+       async function postData() {
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                title : 'New post',
+                body:'This is create post',
+                userid : 1
+            })
+        })
+        let response = await fetch(apiUrl);
+        let data = await response.json();
+        console.log(data.slice(0,5));
+        
+       }
+       async function putData() {
+        fetch(`${apiUrl}/1`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                id : 1,
+                title : 'Update put',
+                body:'This is update put',
+                userid : 1
+            })
+        })
+        let response = await fetch(apiUrl);
+        let data = await response.json()
+        .catch(err => console.error(err));
+        console.log(data);
+       }
+
+       async function patchData() {
+        fetch(`${apiUrl}/1`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                title : 'only this title change'
+            })
+        })
+        let response = await fetch(apiUrl);
+        let data = await response.json()
+        .catch(err => console.error(err));
+        console.log(data);
+       }        
+       async function deleteData() {
+            fetch(`${apiUrl}/1`, {
+                method: 'DELETE'
+            })
+          let response = await fetch(apiUrl);
+          if(response.ok){
+        console.log("Successfully Delete");
+          }
+ 
+        }
+    </script>
+
+</body>
+</html>
